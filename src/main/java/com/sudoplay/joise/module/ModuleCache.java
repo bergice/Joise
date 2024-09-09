@@ -66,6 +66,14 @@ public class ModuleCache extends
   private Cache c4 = new Cache();
   private Cache c6 = new Cache();
 
+  public ModuleCache() {
+  }
+
+  public ModuleCache(String id) {
+    this();
+    setId(id);
+  }
+
   @Override
   public double get(double x, double y) {
 

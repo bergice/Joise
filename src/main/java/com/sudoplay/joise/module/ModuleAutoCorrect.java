@@ -86,6 +86,11 @@ public class ModuleAutoCorrect extends
     this.high = high;
   }
 
+  public ModuleAutoCorrect(String id, double low, double high) {
+    this(low, high);
+    setId(id);
+  }
+
   public void setRange(double low, double high) {
     this.low = low;
     this.high = high;

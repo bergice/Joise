@@ -72,6 +72,16 @@ public class ModuleCombiner extends
     // serialization
   }
 
+  public ModuleCombiner(String id, CombinerType combinerType) {
+    this(combinerType);
+    setId(id);
+  }
+
+  public ModuleCombiner(String id) {
+    this();
+    setId(id);
+  }
+
   public void setType(CombinerType type) {
     this.type = type;
   }

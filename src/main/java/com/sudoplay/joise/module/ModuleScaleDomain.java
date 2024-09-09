@@ -64,6 +64,14 @@ public class ModuleScaleDomain extends
   private ScalarParameter su = new ScalarParameter(DEFAULT_SCALE);
   private ScalarParameter sv = new ScalarParameter(DEFAULT_SCALE);
 
+  public ModuleScaleDomain() {
+  }
+
+  public ModuleScaleDomain(String id) {
+    this();
+    setId(id);
+  }
+
   public void setScaleX(double x) {
     this.sx.set(x);
   }

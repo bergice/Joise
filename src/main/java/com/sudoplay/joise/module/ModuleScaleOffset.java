@@ -58,6 +58,14 @@ public class ModuleScaleOffset extends
   private ScalarParameter scale = new ScalarParameter(1.0);
   private ScalarParameter offset = new ScalarParameter(0.0);
 
+  public ModuleScaleOffset() {
+  }
+
+  public ModuleScaleOffset(String id) {
+    this();
+    setId(id);
+  }
+
   public void setScale(double s) {
     this.scale.set(s);
   }

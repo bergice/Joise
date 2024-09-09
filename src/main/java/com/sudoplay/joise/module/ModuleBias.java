@@ -61,6 +61,11 @@ public class ModuleBias extends
   public ModuleBias() {
   }
 
+  public ModuleBias(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleBias(double bias) {
     this.bias.set(bias);
   }
@@ -70,7 +75,7 @@ public class ModuleBias extends
     this.bias.set(bias);
   }
 
-  public void setBias(double bias) {
+    public void setBias(double bias) {
     this.bias.set(bias);
   }
 

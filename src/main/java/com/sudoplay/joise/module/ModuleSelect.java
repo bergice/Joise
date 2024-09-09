@@ -62,6 +62,14 @@ public class ModuleSelect extends
   private ScalarParameter threshold = new ScalarParameter(0);
   private ScalarParameter falloff = new ScalarParameter(0);
 
+  public ModuleSelect() {
+  }
+
+  public ModuleSelect(String id) {
+    this();
+    setId(id);
+  }
+
   public void setLowSource(double source) {
     this.low.set(source);
   }

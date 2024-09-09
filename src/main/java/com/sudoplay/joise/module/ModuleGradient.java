@@ -78,6 +78,17 @@ public class ModuleGradient extends
         DEFAULT_V2);
   }
 
+  public ModuleGradient(String id) {
+    this();
+    setId(id);
+  }
+
+  public ModuleGradient(String id, double x1, double x2, double y1, double y2) {
+    this();
+    if (id != null) setId(id);
+    setGradient(x1, x2, y1, y2);
+  }
+
   public void setGradient(double x1, double x2, double y1, double y2) {
     this.setGradient(x1, x2, y1, y2, 0, 0, 0, 0, 0, 0, 0, 0);
   }

@@ -91,6 +91,11 @@ public class ModuleFractal extends
     this(DEFAULT_FRACTAL_TYPE, DEFAULT_BASIS_TYPE, DEFAULT_INTERPOLATION_TYPE);
   }
 
+  public ModuleFractal(String id) {
+    this();
+    setId(id);
+  }
+
   @SuppressWarnings("WeakerAccess")
   public ModuleFractal(
       FractalType type,

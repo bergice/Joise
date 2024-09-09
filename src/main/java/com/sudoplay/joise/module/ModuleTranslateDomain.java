@@ -62,6 +62,14 @@ public class ModuleTranslateDomain extends
   private ScalarParameter au = new ScalarParameter(0);
   private ScalarParameter av = new ScalarParameter(0);
 
+  public ModuleTranslateDomain() {
+  }
+
+  public ModuleTranslateDomain(String id) {
+    this();
+    setId(id);
+  }
+
   public void setAxisXSource(double source) {
     this.ax.set(source);
   }

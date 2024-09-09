@@ -68,6 +68,11 @@ public class ModuleClamp extends
     this.setRange(low, high);
   }
 
+  public ModuleClamp(String id) {
+    this();
+    setId(id);
+  }
+
   public void setRange(double low, double high) {
     this.low = low;
     this.high = high;

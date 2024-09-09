@@ -69,13 +69,30 @@ public abstract class Module {
   /**
    * The globally unique string id for this module, used in text serialization.
    */
-  private final String id = ModuleID.create();
+  private String id = ModuleID.create();
+
+  public Module() {
+  }
+
+  public Module(String id) {
+    this();
+    setId(id);
+  }
 
   /**
    * @return the globally unique string id for this module
    */
   public String getId() {
     return this.id;
+  }
+
+  /**
+   * Sets the globally unique string id for this module
+   */
+  public void setId(String id) {
+    this.id = "FUNC:" + id.replace(" ", "");
+//    this.id = this.id + "_" + id.replace(" ", "");
+//    this.id = id;
   }
 
   /**

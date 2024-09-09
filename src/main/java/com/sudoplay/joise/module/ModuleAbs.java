@@ -55,6 +55,14 @@ import com.sudoplay.joise.ModulePropertyMap;
 public class ModuleAbs extends
     SourcedModule {
 
+  public ModuleAbs() {
+  }
+
+  public ModuleAbs(String id) {
+    this();
+    setId(id);
+  }
+
   @Override
   public double get(double x, double y) {
     return Math.abs(this.source.get(x, y));
