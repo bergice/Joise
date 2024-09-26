@@ -60,6 +60,14 @@ public class ModuleBlend extends
   private ScalarParameter high = new ScalarParameter(1.0);
   private ScalarParameter control = new ScalarParameter(0.5);
 
+  public ModuleBlend() {
+  }
+
+  public ModuleBlend(String id) {
+    this();
+    setId(id);
+  }
+
   @SuppressWarnings("unused")
   public void setLowSource(double source) {
     this.low.set(source);
