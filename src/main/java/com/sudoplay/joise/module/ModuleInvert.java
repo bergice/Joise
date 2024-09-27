@@ -55,6 +55,15 @@ import com.sudoplay.joise.ModulePropertyMap;
 public class ModuleInvert extends
     SourcedModule {
 
+  public ModuleInvert() {
+    super();
+  }
+
+  public ModuleInvert(Module source) {
+    this();
+    setSource(source);
+  }
+
   @Override
   public double get(double x, double y) {
     return -this.source.get(x, y);
