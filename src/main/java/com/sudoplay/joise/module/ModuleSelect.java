@@ -70,6 +70,24 @@ public class ModuleSelect extends
     setId(id);
   }
 
+  public ModuleSelect(double lowSource, double highSource, Module controlSource, double threshold, double falloff) {
+    this();
+    setLowSource(lowSource);
+    setHighSource(highSource);
+    setControlSource(controlSource);
+    setThreshold(threshold);
+    setFalloff(falloff);
+  }
+
+  public ModuleSelect(double lowSource, Module highSource, Module controlSource, double threshold, double falloff) {
+    this();
+    setLowSource(lowSource);
+    setHighSource(highSource);
+    setControlSource(controlSource);
+    setThreshold(threshold);
+    setFalloff(falloff);
+  }
+
   public void setLowSource(double source) {
     this.low.set(source);
   }

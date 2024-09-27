@@ -70,7 +70,13 @@ public class ModuleTranslateDomain extends
     setId(id);
   }
 
-  public void setAxisXSource(double source) {
+  public ModuleTranslateDomain(Module source, Module axisYSource) {
+    this();
+    setSource(source);
+    setAxisYSource(axisYSource);
+  }
+
+    public void setAxisXSource(double source) {
     this.ax.set(source);
   }
 
