@@ -96,6 +96,12 @@ public class ModuleFractal extends
     setId(id);
   }
 
+  public ModuleFractal(int octaves, double frequency) {
+    this();
+    this.setNumOctaves(octaves);
+    this.setFrequency(frequency);
+  }
+
   @SuppressWarnings("WeakerAccess")
   public ModuleFractal(
       FractalType type,
