@@ -121,6 +121,19 @@ public class ModuleFractal extends
     this.resetAllSources();
   }
 
+  public ModuleFractal(FractalType type, BasisType basisType, InterpolationType interpolationType, int octaves, double frequency) {
+    for (int i = 0; i < MAX_OCTAVES; i++) {
+      this.basis[i] = new ModuleBasisFunction();
+      this.derivativeSpacing[i] = DEFAULT_SPACING;
+    }
+    this.setType(type);
+    this.setNumOctaves(octaves);
+    this.setFrequency(frequency);
+    this.setLacunarity(DEFAULT_LACUNARITY);
+    this.setAllSourceTypes(basisType, interpolationType);
+    this.resetAllSources();
+  }
+
   public void setNumOctaves(int n) {
     this.assertIndexWithinBounds(n);
     this.numOctaves = n;

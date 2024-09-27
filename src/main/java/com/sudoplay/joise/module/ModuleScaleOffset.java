@@ -66,7 +66,7 @@ public class ModuleScaleOffset extends
     setId(id);
   }
 
-  public ModuleScaleOffset(int scale, Module source) {
+  public ModuleScaleOffset(double scale, Module source) {
     this();
     setScale(scale);
     setSource(source);
