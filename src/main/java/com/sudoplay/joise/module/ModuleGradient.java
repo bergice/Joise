@@ -89,6 +89,11 @@ public class ModuleGradient extends
     setGradient(x1, x2, y1, y2);
   }
 
+  public ModuleGradient(double x1, double x2, double y1, double y2) {
+    this();
+    setGradient(x1, x2, y1, y2);
+  }
+
   public void setGradient(double x1, double x2, double y1, double y2) {
     this.setGradient(x1, x2, y1, y2, 0, 0, 0, 0, 0, 0, 0, 0);
   }
