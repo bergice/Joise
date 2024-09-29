@@ -61,7 +61,7 @@ public class ModuleFractal extends
 
   private static final int MAX_OCTAVES = 10;
 
-  public enum FractalType {
+    public enum FractalType {
     FBM, RIDGEMULTI, BILLOW, MULTI, HYBRIDMULTI, DECARPENTIERSWISS
   }
 
@@ -132,6 +132,12 @@ public class ModuleFractal extends
     this.setLacunarity(DEFAULT_LACUNARITY);
     this.setAllSourceTypes(basisType, interpolationType);
     this.resetAllSources();
+  }
+
+  public ModuleFractal(String id, FractalType fractalType, BasisType basisType, InterpolationType interpolationType, int octaves, double frequency, int seed) {
+    this(fractalType, basisType, interpolationType, octaves, frequency);
+    setSeed(seed);
+    setId(id);
   }
 
   public void setNumOctaves(int n) {

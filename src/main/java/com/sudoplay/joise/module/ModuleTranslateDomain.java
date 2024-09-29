@@ -70,6 +70,19 @@ public class ModuleTranslateDomain extends
     setId(id);
   }
 
+  public ModuleTranslateDomain(String id, Module source, Module axisXSource) {
+    this(id);
+    setSource(source);
+    setAxisXSource(axisXSource);
+  }
+
+  public ModuleTranslateDomain(String id, Module source, Module axisXSource, Module axisYSource) {
+    this(id);
+    setSource(source);
+    setAxisXSource(axisXSource);
+    setAxisYSource(axisYSource);
+  }
+
   public ModuleTranslateDomain(Module source, Module axisYSource) {
     this();
     setSource(source);

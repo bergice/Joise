@@ -91,6 +91,12 @@ public class ModuleAutoCorrect extends
     setId(id);
   }
 
+  public ModuleAutoCorrect(String id, double low, double high, Module source) {
+    this(id, low, high);
+    setSource(source);
+    calculate2D();
+  }
+
   public void setRange(double low, double high) {
     this.low = low;
     this.high = high;

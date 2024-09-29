@@ -72,6 +72,17 @@ public class ModuleScaleOffset extends
     setSource(source);
   }
 
+  public ModuleScaleOffset(String id, double scale, Module source) {
+    this(id);
+    setScale(scale);
+    setSource(source);
+  }
+
+  public ModuleScaleOffset(String id, Module source, double scale, double offset) {
+    this(id, scale, source);
+    setOffset(offset);
+  }
+
   public void setScale(double s) {
     this.scale.set(s);
   }

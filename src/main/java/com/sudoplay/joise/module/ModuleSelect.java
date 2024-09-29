@@ -88,6 +88,33 @@ public class ModuleSelect extends
     setFalloff(falloff);
   }
 
+  public ModuleSelect(String id, double lowSource, Module highSource, Module controlSource, double threshold) {
+    this(id);
+    setLowSource(lowSource);
+    setHighSource(highSource);
+    setControlSource(controlSource);
+    setThreshold(threshold);
+    setFalloff(falloff);
+  }
+
+  public ModuleSelect(String id, double lowSource, double highSource, Module controlSource, double threshold, double falloff) {
+    this(id);
+    setLowSource(lowSource);
+    setHighSource(highSource);
+    setControlSource(controlSource);
+    setThreshold(threshold);
+    setFalloff(falloff);
+  }
+
+  public ModuleSelect(String id, Module lowSource, Module highSource, Module controlSource, double threshold, double falloff) {
+    this(id);
+    setLowSource(lowSource);
+    setHighSource(highSource);
+    setControlSource(controlSource);
+    setThreshold(threshold);
+    setFalloff(falloff);
+  }
+
   public void setLowSource(double source) {
     this.low.set(source);
   }

@@ -72,6 +72,12 @@ public class ModuleScaleDomain extends
     setId(id);
   }
 
+  public ModuleScaleDomain(String id, Module source, double scaleY) {
+    this(id);
+    setSource(source);
+    setScaleY(scaleY);
+  }
+
   public void setScaleX(double x) {
     this.sx.set(x);
   }

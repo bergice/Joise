@@ -82,6 +82,13 @@ public class ModuleCombiner extends
     setId(id);
   }
 
+  public ModuleCombiner(String id, CombinerType combinerType, Module source0, Module source1) {
+    this(id);
+    setType(combinerType);
+    setSource(0, source0);
+    setSource(1, source1);
+  }
+
   public void setType(CombinerType type) {
     this.type = type;
   }
