@@ -74,6 +74,11 @@ public class ModuleCache extends
     setId(id);
   }
 
+  public ModuleCache(String id, Module source) {
+    this(id);
+    setSource(source);
+  }
+
   @Override
   public double get(double x, double y) {
 
