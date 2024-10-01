@@ -18,7 +18,23 @@ public class ModuleOverlaps extends Module {
         setId(id);
     }
 
-    public ModuleOverlaps(String id, Module controlSource, byte value, Module highSource, Module lowSource) {
+    public ModuleOverlaps(String id, Module controlSource, double value, Module highSource, Module lowSource) {
+        this(id);
+        setControlSource(controlSource); // where the control
+        setValue(value); // match this value
+        setHighSource(highSource); // keep this
+        setLowSource(lowSource); // otherwise, keep this
+    }
+
+    public ModuleOverlaps(String id, Module controlSource, double value, Module highSource, double lowSource) {
+        this(id);
+        setControlSource(controlSource); // where the control
+        setValue(value); // match this value
+        setHighSource(highSource); // keep this
+        setLowSource(lowSource); // otherwise, keep this
+    }
+
+    public ModuleOverlaps(String id, Module controlSource, double value, double highSource, Module lowSource) {
         this(id);
         setControlSource(controlSource); // where the control
         setValue(value); // match this value
