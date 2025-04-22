@@ -1,117 +1,77 @@
-apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'signing'
-
-sourceCompatibility = 1.6
-
-repositories {
-	mavenCentral()
+// todo: no idea if this gradle config works, i just wanted it to compile 🫠
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
 }
 
-dependencies {
-	testCompile 'junit:junit:4.11'
-}
-
-task wrapper(type: Wrapper) {
-	gradleVersion = '4.1'
-}
-
-task javadocJar(type: Jar) {
-	classifier = 'javadoc'
-	from javadoc
-}
-
-task sourcesJar(type: Jar) {
-	classifier = 'sources'
-	from sourceSets.main.allSource
-}
-
-artifacts {
-	archives jar
-	archives javadocJar
-	archives sourcesJar
-}
-
-signing {
-    required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
-    sign configurations.archives
-}
-
-def getVersionName() {
-    return new File("${project.projectDir}/project.version").text
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+    withJavadocJar()
+    withSourcesJar()
 }
 
 group = 'com.sudoplay.joise'
-version = getVersionName()
-archivesBaseName = 'joise'
+version = file("project.version").text.trim()
+def isRelease = !version.contains("SNAPSHOT")
 
-def isReleaseBuild() {
-    return version.contains("SNAPSHOT") == false;
+repositories {
+    mavenCentral()
 }
 
-def getReleaseRepositoryUrl() {
-    return hasProperty('RELEASE_REPOSITORY_URL') ? RELEASE_REPOSITORY_URL
-            : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+dependencies {
+    testImplementation 'junit:junit:4.11'
 }
 
-def getSnapshotRepositoryUrl() {
-    return hasProperty('SNAPSHOT_REPOSITORY_URL') ? SNAPSHOT_REPOSITORY_URL
-            : "https://oss.sonatype.org/content/repositories/snapshots/"
-}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
 
-def getRepositoryUsername() {
-    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
-}
-
-def getRepositoryPassword() {
-    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
-}
-
-//noinspection GroovyAssignabilityCheck
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            pom.groupId = project.group
-            pom.artifactId = project.archivesBaseName
-            pom.version = project.version
-
-            repository(url: getReleaseRepositoryUrl()) {
-                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
-            }
-            snapshotRepository(url: getSnapshotRepositoryUrl()) {
-                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
-            }
-
-            pom.project {
-                name POM_NAME
-                packaging POM_PACKAGING
-                description POM_DESCRIPTION
-                url POM_URL
-
-                scm {
-                    url POM_SCM_URL
-                    connection POM_SCM_CONNECTION
-                    developerConnection POM_SCM_DEV_CONNECTION
-                }
-
+            pom {
+                name = POM_NAME
+                description = POM_DESCRIPTION
+                url = POM_URL
                 licenses {
                     license {
-                        name POM_LICENSE_NAME
-                        url POM_LICENSE_URL
+                        name = POM_LICENSE_NAME
+                        url = POM_LICENSE_URL
                     }
                 }
-
                 developers {
                     developer {
-                        name POM_DEVELOPER_NAME
-                        email POM_DEVELOPER_EMAIL
-                        organization POM_DEVELOPER_ORGANIZATION
-                        organizationUrl POM_DEVELOPER_ORGANIZATION_URL
+                        name = POM_DEVELOPER_NAME
+                        email = POM_DEVELOPER_EMAIL
+                        organization = POM_DEVELOPER_ORGANIZATION
+                        organizationUrl = POM_DEVELOPER_ORGANIZATION_URL
                     }
+                }
+                scm {
+                    url = POM_SCM_URL
+                    connection = POM_SCM_CONNECTION
+                    developerConnection = POM_SCM_DEV_CONNECTION
                 }
             }
         }
     }
+
+    repositories {
+        maven {
+            url = uri(isRelease ?
+                    (project.findProperty("RELEASE_REPOSITORY_URL") ?: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") :
+                    (project.findProperty("SNAPSHOT_REPOSITORY_URL") ?: "https://oss.sonatype.org/content/repositories/snapshots/")
+            )
+            credentials {
+                username = project.findProperty("NEXUS_USERNAME") ?: ""
+                password = project.findProperty("NEXUS_PASSWORD") ?: ""
+            }
+        }
+    }
+}
+
+signing {
+    required { isRelease }
+    sign publishing.publications.mavenJava
 }
