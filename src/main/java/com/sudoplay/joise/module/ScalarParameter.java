@@ -53,6 +53,10 @@ public class ScalarParameter {
   private Module module;
   private double value;
 
+  public ScalarParameter() {
+    this(0);
+  }
+
   public ScalarParameter(Module source) {
     this.set(source);
   }

@@ -63,6 +63,9 @@ public class ModuleSphere extends
   private ScalarParameter cv = new ScalarParameter(0);
   private ScalarParameter radius = new ScalarParameter(1);
 
+  public ModuleSphere() {
+  }
+
   public void setCenterX(double source) {
     this.cx.set(source);
   }

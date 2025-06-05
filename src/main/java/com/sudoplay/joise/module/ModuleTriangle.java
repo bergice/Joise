@@ -62,6 +62,9 @@ public class ModuleTriangle extends
   private ScalarParameter period = new ScalarParameter(DEFAULT_PERIOD);
   private ScalarParameter offset = new ScalarParameter(DEFAULT_OFFSET);
 
+  public ModuleTriangle() {
+  }
+
   public void setPeriod(double source) {
     this.period.set(source);
   }

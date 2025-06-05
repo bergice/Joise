@@ -62,6 +62,9 @@ public class ModuleRotateDomain extends
   private ScalarParameter az = new ScalarParameter(0);
   private ScalarParameter axisangle = new ScalarParameter(0);
 
+  public ModuleRotateDomain() {
+  }
+
   public void setAxis(double ax, double ay, double az) {
     this.ax.set(ax);
     this.ay.set(ay);

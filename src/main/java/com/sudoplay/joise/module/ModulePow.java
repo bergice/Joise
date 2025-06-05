@@ -59,6 +59,9 @@ public class ModulePow extends
 
   private ScalarParameter power = new ScalarParameter(DEFAULT_POWER);
 
+  public ModulePow() {
+  }
+
   public void setPower(double v) {
     this.power.set(v);
   }

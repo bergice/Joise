@@ -55,6 +55,9 @@ import com.sudoplay.joise.ModulePropertyMap;
 public class ModuleCos extends
     SourcedModule {
 
+  public ModuleCos() {
+  }
+
   @Override
   public double get(double x, double y) {
     return Math.cos(this.source.get(x, y));

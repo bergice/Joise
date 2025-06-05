@@ -62,6 +62,9 @@ public class ModuleMagnitude extends
   private ScalarParameter sU = new ScalarParameter(0);
   private ScalarParameter sV = new ScalarParameter(0);
 
+  public ModuleMagnitude() {
+  }
+
   public void setX(double source) {
     this.sX.set(source);
   }

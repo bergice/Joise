@@ -59,6 +59,9 @@ public class ModuleBrightContrast extends
   private ScalarParameter threshold = new ScalarParameter(0.0);
   private ScalarParameter factor = new ScalarParameter(1.0);
 
+  public ModuleBrightContrast() {
+  }
+
   public void setBrightness(double b) {
     this.bright.set(b);
   }
