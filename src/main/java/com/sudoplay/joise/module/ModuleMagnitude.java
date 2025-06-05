@@ -65,6 +65,11 @@ public class ModuleMagnitude extends
   public ModuleMagnitude() {
   }
 
+  public ModuleMagnitude(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleMagnitude(double x, double y, double z, double w, double u, double v) {
     this();
     setX(x);
@@ -77,6 +82,26 @@ public class ModuleMagnitude extends
 
   public ModuleMagnitude(Module x, Module y, Module z, Module w, Module u, Module v) {
     this();
+    setX(x);
+    setY(y);
+    setZ(z);
+    setW(w);
+    setU(u);
+    setV(v);
+  }
+
+  public ModuleMagnitude(String id, double x, double y, double z, double w, double u, double v) {
+    this(id);
+    setX(x);
+    setY(y);
+    setZ(z);
+    setW(w);
+    setU(u);
+    setV(v);
+  }
+
+  public ModuleMagnitude(String id, Module x, Module y, Module z, Module w, Module u, Module v) {
+    this(id);
     setX(x);
     setY(y);
     setZ(z);

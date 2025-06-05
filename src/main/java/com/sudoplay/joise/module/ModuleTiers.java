@@ -66,8 +66,19 @@ public class ModuleTiers extends
   public ModuleTiers() {
   }
 
+  public ModuleTiers(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleTiers(int numTiers, boolean smooth) {
     this();
+    setNumTiers(numTiers);
+    setSmooth(smooth);
+  }
+
+  public ModuleTiers(String id, int numTiers, boolean smooth) {
+    this(id);
     setNumTiers(numTiers);
     setSmooth(smooth);
   }

@@ -62,13 +62,28 @@ public class ModulePow extends
   public ModulePow() {
   }
 
+  public ModulePow(String id) {
+    this();
+    setId(id);
+  }
+
   public ModulePow(double power) {
     this();
     setPower(power);
   }
 
+  public ModulePow(String id, double power) {
+    this(id);
+    setPower(power);
+  }
+
   public ModulePow(Module source, double power) {
     this(power);
+    setSource(source);
+  }
+
+  public ModulePow(String id, Module source, double power) {
+    this(id, power);
     setSource(source);
   }
 

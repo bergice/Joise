@@ -58,8 +58,18 @@ public class ModuleCos extends
   public ModuleCos() {
   }
 
+  public ModuleCos(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleCos(Module source) {
     this();
+    setSource(source);
+  }
+
+  public ModuleCos(String id, Module source) {
+    this(id);
     setSource(source);
   }
 

@@ -59,8 +59,18 @@ public class ModuleInvert extends
     super();
   }
 
+  public ModuleInvert(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleInvert(Module source) {
     this();
+    setSource(source);
+  }
+
+  public ModuleInvert(String id, Module source) {
+    this(id);
     setSource(source);
   }
 

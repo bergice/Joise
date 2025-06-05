@@ -58,8 +58,18 @@ public class ModuleSin extends
   public ModuleSin() {
   }
 
+  public ModuleSin(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleSin(Module source) {
     this();
+    setSource(source);
+  }
+
+  public ModuleSin(String id, Module source) {
+    this(id);
     setSource(source);
   }
 

@@ -63,8 +63,18 @@ public class ModuleNormalizedCoords extends
     this(DEFAULT_LENGTH);
   }
 
+  public ModuleNormalizedCoords(String id) {
+    this();
+    setId(id);
+  }
+
   @SuppressWarnings("WeakerAccess")
   public ModuleNormalizedCoords(double length) {
+    this.setLength(length);
+  }
+
+  public ModuleNormalizedCoords(String id, double length) {
+    this(id);
     this.setLength(length);
   }
 

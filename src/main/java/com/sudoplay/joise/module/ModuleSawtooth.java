@@ -60,13 +60,28 @@ public class ModuleSawtooth extends
   public ModuleSawtooth() {
   }
 
+  public ModuleSawtooth(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleSawtooth(double period) {
     this();
     setPeriod(period);
   }
 
+  public ModuleSawtooth(String id, double period) {
+    this(id);
+    setPeriod(period);
+  }
+
   public ModuleSawtooth(Module source, double period) {
     this(period);
+    setSource(source);
+  }
+
+  public ModuleSawtooth(String id, Module source, double period) {
+    this(id, period);
     setSource(source);
   }
 

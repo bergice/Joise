@@ -58,8 +58,18 @@ public class ModuleFloor extends
   public ModuleFloor() {
   }
 
+  public ModuleFloor(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleFloor(Module source) {
     this();
+    setSource(source);
+  }
+
+  public ModuleFloor(String id, Module source) {
+    this(id);
     setSource(source);
   }
 

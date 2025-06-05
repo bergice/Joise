@@ -64,8 +64,18 @@ public class ModuleGain extends
     this.setGain(DEFAULT_GAIN);
   }
 
+  public ModuleGain(String id) {
+    this();
+    setId(id);
+  }
+
   @SuppressWarnings("unused")
   public ModuleGain(double gain) {
+    this.setGain(gain);
+  }
+
+  public ModuleGain(String id, double gain) {
+    this(id);
     this.setGain(gain);
   }
 

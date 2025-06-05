@@ -62,6 +62,11 @@ public class ModuleBrightContrast extends
   public ModuleBrightContrast() {
   }
 
+  public ModuleBrightContrast(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleBrightContrast(double brightness, double threshold, double factor) {
     this();
     setBrightness(brightness);
@@ -71,6 +76,18 @@ public class ModuleBrightContrast extends
 
   public ModuleBrightContrast(Module source, double brightness, double threshold, double factor) {
     this(brightness, threshold, factor);
+    setSource(source);
+  }
+
+  public ModuleBrightContrast(String id, double brightness, double threshold, double factor) {
+    this(id);
+    setBrightness(brightness);
+    setContrastThreshold(threshold);
+    setContrastFactor(factor);
+  }
+
+  public ModuleBrightContrast(String id, Module source, double brightness, double threshold, double factor) {
+    this(id, brightness, threshold, factor);
     setSource(source);
   }
 

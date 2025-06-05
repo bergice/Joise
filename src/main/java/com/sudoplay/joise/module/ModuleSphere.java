@@ -66,6 +66,11 @@ public class ModuleSphere extends
   public ModuleSphere() {
   }
 
+  public ModuleSphere(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleSphere(double cx, double cy, double radius) {
     this();
     setCenterX(cx);
@@ -75,6 +80,24 @@ public class ModuleSphere extends
 
   public ModuleSphere(double cx, double cy, double cz, double cw, double cu, double cv, double radius) {
     this();
+    setCenterX(cx);
+    setCenterY(cy);
+    setCenterZ(cz);
+    setCenterW(cw);
+    setCenterU(cu);
+    setCenterV(cv);
+    setRadius(radius);
+  }
+
+  public ModuleSphere(String id, double cx, double cy, double radius) {
+    this(id);
+    setCenterX(cx);
+    setCenterY(cy);
+    setRadius(radius);
+  }
+
+  public ModuleSphere(String id, double cx, double cy, double cz, double cw, double cu, double cv, double radius) {
+    this(id);
     setCenterX(cx);
     setCenterY(cy);
     setCenterZ(cz);
