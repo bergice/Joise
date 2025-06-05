@@ -58,6 +58,11 @@ public class ModuleSin extends
   public ModuleSin() {
   }
 
+  public ModuleSin(Module source) {
+    this();
+    setSource(source);
+  }
+
   @Override
   public double get(double x, double y) {
     return Math.sin(this.source.get(x, y));

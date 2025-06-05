@@ -58,6 +58,11 @@ public class ModuleFloor extends
   public ModuleFloor() {
   }
 
+  public ModuleFloor(Module source) {
+    this();
+    setSource(source);
+  }
+
   @Override
   public double get(double x, double y) {
     return Math.floor(this.source.get(x, y));

@@ -62,6 +62,16 @@ public class ModulePow extends
   public ModulePow() {
   }
 
+  public ModulePow(double power) {
+    this();
+    setPower(power);
+  }
+
+  public ModulePow(Module source, double power) {
+    this(power);
+    setSource(source);
+  }
+
   public void setPower(double v) {
     this.power.set(v);
   }

@@ -58,6 +58,11 @@ public class ModuleCos extends
   public ModuleCos() {
   }
 
+  public ModuleCos(Module source) {
+    this();
+    setSource(source);
+  }
+
   @Override
   public double get(double x, double y) {
     return Math.cos(this.source.get(x, y));

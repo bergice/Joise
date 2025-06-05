@@ -65,6 +65,17 @@ public class ModuleTriangle extends
   public ModuleTriangle() {
   }
 
+  public ModuleTriangle(double period, double offset) {
+    this();
+    setPeriod(period);
+    setOffset(offset);
+  }
+
+  public ModuleTriangle(Module source, double period, double offset) {
+    this(period, offset);
+    setSource(source);
+  }
+
   public void setPeriod(double source) {
     this.period.set(source);
   }

@@ -65,6 +65,26 @@ public class ModuleMagnitude extends
   public ModuleMagnitude() {
   }
 
+  public ModuleMagnitude(double x, double y, double z, double w, double u, double v) {
+    this();
+    setX(x);
+    setY(y);
+    setZ(z);
+    setW(w);
+    setU(u);
+    setV(v);
+  }
+
+  public ModuleMagnitude(Module x, Module y, Module z, Module w, Module u, Module v) {
+    this();
+    setX(x);
+    setY(y);
+    setZ(z);
+    setW(w);
+    setU(u);
+    setV(v);
+  }
+
   public void setX(double source) {
     this.sX.set(source);
   }

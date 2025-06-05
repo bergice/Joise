@@ -60,6 +60,16 @@ public class ModuleSawtooth extends
   public ModuleSawtooth() {
   }
 
+  public ModuleSawtooth(double period) {
+    this();
+    setPeriod(period);
+  }
+
+  public ModuleSawtooth(Module source, double period) {
+    this(period);
+    setSource(source);
+  }
+
   public void setPeriod(double p) {
     this.period.set(p);
   }

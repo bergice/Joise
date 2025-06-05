@@ -59,6 +59,11 @@ public abstract class SeededModule extends
   protected SeededModule() {
   }
 
+  protected SeededModule(long seed) {
+    this();
+    setSeed(seed);
+  }
+
   public void setSeed(long seed) {
     this.seed = seed;
   }

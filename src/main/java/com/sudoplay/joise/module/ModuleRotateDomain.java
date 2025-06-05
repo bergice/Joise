@@ -65,6 +65,17 @@ public class ModuleRotateDomain extends
   public ModuleRotateDomain() {
   }
 
+  public ModuleRotateDomain(double axisX, double axisY, double axisZ, double angle) {
+    this();
+    setAxis(axisX, axisY, axisZ);
+    setAngle(angle);
+  }
+
+  public ModuleRotateDomain(Module source, double axisX, double axisY, double axisZ, double angle) {
+    this(axisX, axisY, axisZ, angle);
+    setSource(source);
+  }
+
   public void setAxis(double ax, double ay, double az) {
     this.ax.set(ax);
     this.ay.set(ay);
