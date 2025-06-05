@@ -52,6 +52,19 @@ public abstract class SourcedModule extends Module {
 
   protected ScalarParameter source = new ScalarParameter(0.0);
 
+  protected SourcedModule() {
+  }
+
+  protected SourcedModule(double source) {
+    this();
+    setSource(source);
+  }
+
+  protected SourcedModule(Module source) {
+    this();
+    setSource(source);
+  }
+
   public void setSource(double source) {
     this.source.set(source);
   }

@@ -57,6 +57,34 @@ public class ModuleSawtooth extends
 
   private ScalarParameter period = new ScalarParameter(0);
 
+  public ModuleSawtooth() {
+  }
+
+  public ModuleSawtooth(String id) {
+    this();
+    setId(id);
+  }
+
+  public ModuleSawtooth(double period) {
+    this();
+    setPeriod(period);
+  }
+
+  public ModuleSawtooth(String id, double period) {
+    this(id);
+    setPeriod(period);
+  }
+
+  public ModuleSawtooth(Module source, double period) {
+    this(period);
+    setSource(source);
+  }
+
+  public ModuleSawtooth(String id, Module source, double period) {
+    this(id, period);
+    setSource(source);
+  }
+
   public void setPeriod(double p) {
     this.period.set(p);
   }

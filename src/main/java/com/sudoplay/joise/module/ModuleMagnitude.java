@@ -62,6 +62,54 @@ public class ModuleMagnitude extends
   private ScalarParameter sU = new ScalarParameter(0);
   private ScalarParameter sV = new ScalarParameter(0);
 
+  public ModuleMagnitude() {
+  }
+
+  public ModuleMagnitude(String id) {
+    this();
+    setId(id);
+  }
+
+  public ModuleMagnitude(double x, double y, double z, double w, double u, double v) {
+    this();
+    setX(x);
+    setY(y);
+    setZ(z);
+    setW(w);
+    setU(u);
+    setV(v);
+  }
+
+  public ModuleMagnitude(Module x, Module y, Module z, Module w, Module u, Module v) {
+    this();
+    setX(x);
+    setY(y);
+    setZ(z);
+    setW(w);
+    setU(u);
+    setV(v);
+  }
+
+  public ModuleMagnitude(String id, double x, double y, double z, double w, double u, double v) {
+    this(id);
+    setX(x);
+    setY(y);
+    setZ(z);
+    setW(w);
+    setU(u);
+    setV(v);
+  }
+
+  public ModuleMagnitude(String id, Module x, Module y, Module z, Module w, Module u, Module v) {
+    this(id);
+    setX(x);
+    setY(y);
+    setZ(z);
+    setW(w);
+    setU(u);
+    setV(v);
+  }
+
   public void setX(double source) {
     this.sX.set(source);
   }

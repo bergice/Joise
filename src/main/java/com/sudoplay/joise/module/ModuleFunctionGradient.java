@@ -70,6 +70,11 @@ public class ModuleFunctionGradient extends
     this.setSpacing(DEFAULT_SPACING);
   }
 
+  public ModuleFunctionGradient(String id) {
+    this();
+    setId(id);
+  }
+
   public void setAxis(FunctionGradientAxis axis) {
     this.axis = axis;
   }

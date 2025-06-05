@@ -85,11 +85,15 @@ public class ModuleCellGen extends
   private CellularCache c6 = new CellularCache();
 
   public ModuleCellGen() {
+    this(ModuleID.create());
+  }
+
+  public ModuleCellGen(String id) {
     this.workerNoise2 = new WorkerNoise2Value();
     this.workerNoise3 = new WorkerNoise3Value();
     this.workerNoise4 = new WorkerNoise4Value();
     this.workerNoise6 = new WorkerNoise6Value();
-    this.id = ModuleID.create();
+    this.id = id;
   }
 
   @Override

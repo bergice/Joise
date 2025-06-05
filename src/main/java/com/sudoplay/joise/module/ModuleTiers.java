@@ -63,6 +63,26 @@ public class ModuleTiers extends
   private int numTiers = DEFAULT_NUM_TIERS;
   private boolean smooth = DEFAULT_SMOOTH;
 
+  public ModuleTiers() {
+  }
+
+  public ModuleTiers(String id) {
+    this();
+    setId(id);
+  }
+
+  public ModuleTiers(int numTiers, boolean smooth) {
+    this();
+    setNumTiers(numTiers);
+    setSmooth(smooth);
+  }
+
+  public ModuleTiers(String id, int numTiers, boolean smooth) {
+    this(id);
+    setNumTiers(numTiers);
+    setSmooth(smooth);
+  }
+
   public void setNumTiers(int n) {
     this.numTiers = n;
   }

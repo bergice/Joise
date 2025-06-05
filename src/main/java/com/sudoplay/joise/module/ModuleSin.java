@@ -55,6 +55,24 @@ import com.sudoplay.joise.ModulePropertyMap;
 public class ModuleSin extends
     SourcedModule {
 
+  public ModuleSin() {
+  }
+
+  public ModuleSin(String id) {
+    this();
+    setId(id);
+  }
+
+  public ModuleSin(Module source) {
+    this();
+    setSource(source);
+  }
+
+  public ModuleSin(String id, Module source) {
+    this(id);
+    setSource(source);
+  }
+
   @Override
   public double get(double x, double y) {
     return Math.sin(this.source.get(x, y));

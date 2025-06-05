@@ -87,15 +87,41 @@ public class ModuleBasisFunction extends
     this(BasisType.GRADIENT, InterpolationType.QUINTIC, 10000);
   }
 
+  public ModuleBasisFunction(String id) {
+    this();
+    setId(id);
+  }
+
   public ModuleBasisFunction(BasisType type) {
     this(type, InterpolationType.QUINTIC, 10000);
+  }
+
+  public ModuleBasisFunction(String id, BasisType type) {
+    this(id);
+    this.setType(type);
+    this.setInterpolation(InterpolationType.QUINTIC);
+    this.setSeed(10000);
   }
 
   public ModuleBasisFunction(BasisType type, InterpolationType interpolationType) {
     this(type, interpolationType, 10000);
   }
 
+  public ModuleBasisFunction(String id, BasisType type, InterpolationType interpolationType) {
+    this(id);
+    this.setType(type);
+    this.setInterpolation(interpolationType);
+    this.setSeed(10000);
+  }
+
   public ModuleBasisFunction(BasisType type, InterpolationType interpolationType, long seed) {
+    this.setType(type);
+    this.setInterpolation(interpolationType);
+    this.setSeed(seed);
+  }
+
+  public ModuleBasisFunction(String id, BasisType type, InterpolationType interpolationType, long seed) {
+    this(id);
     this.setType(type);
     this.setInterpolation(interpolationType);
     this.setSeed(seed);

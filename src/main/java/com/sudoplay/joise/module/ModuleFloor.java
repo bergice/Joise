@@ -55,6 +55,24 @@ import com.sudoplay.joise.ModulePropertyMap;
 public class ModuleFloor extends
     SourcedModule {
 
+  public ModuleFloor() {
+  }
+
+  public ModuleFloor(String id) {
+    this();
+    setId(id);
+  }
+
+  public ModuleFloor(Module source) {
+    this();
+    setSource(source);
+  }
+
+  public ModuleFloor(String id, Module source) {
+    this(id);
+    setSource(source);
+  }
+
   @Override
   public double get(double x, double y) {
     return Math.floor(this.source.get(x, y));

@@ -63,6 +63,50 @@ public class ModuleSphere extends
   private ScalarParameter cv = new ScalarParameter(0);
   private ScalarParameter radius = new ScalarParameter(1);
 
+  public ModuleSphere() {
+  }
+
+  public ModuleSphere(String id) {
+    this();
+    setId(id);
+  }
+
+  public ModuleSphere(double cx, double cy, double radius) {
+    this();
+    setCenterX(cx);
+    setCenterY(cy);
+    setRadius(radius);
+  }
+
+  public ModuleSphere(double cx, double cy, double cz, double cw, double cu, double cv, double radius) {
+    this();
+    setCenterX(cx);
+    setCenterY(cy);
+    setCenterZ(cz);
+    setCenterW(cw);
+    setCenterU(cu);
+    setCenterV(cv);
+    setRadius(radius);
+  }
+
+  public ModuleSphere(String id, double cx, double cy, double radius) {
+    this(id);
+    setCenterX(cx);
+    setCenterY(cy);
+    setRadius(radius);
+  }
+
+  public ModuleSphere(String id, double cx, double cy, double cz, double cw, double cu, double cv, double radius) {
+    this(id);
+    setCenterX(cx);
+    setCenterY(cy);
+    setCenterZ(cz);
+    setCenterW(cw);
+    setCenterU(cu);
+    setCenterV(cv);
+    setRadius(radius);
+  }
+
   public void setCenterX(double source) {
     this.cx.set(source);
   }
